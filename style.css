@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #4362ec;
+  --secondary-color: #0f4397;
+  --brand-gradient: linear-gradient(#4362ec, #0f4397);
+
+  --black: #24252c;
+  --black-75: #5b5c60;
+  --black-50: #919295;
+  --black-25: #c8c9ca;
+  --black-10: #e9e9ea;
+  --black-5: #f4f4f4;
+  --white: #ffffff;
+
+  --error: #ed4261;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--black-75);
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--white);
+}
+
+/* -------- Header - Navbar - Socials ---------*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+}
+
+.logo-icon {
+  height: 2rem;
+  width: auto;
+}
+
+/* Navigation links */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--black);
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+}
+
+.nav-link:hover {
+  transform: scale(1.05);
+  color: var(--primary-color);
+}
+
+/* Social Links */
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.social {
+  width: 2rem;
+  cursor: pointer;
+  color: var(--black);
+  transition: all 0.4s ease-out;
+}
+
+.social:hover {
+  transform: scale(1.05);
+  color: var(--primary-color);
+}
+
+.menu {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+/* ---------- Responsive Design ---------- */
+
+/* 1. Laptop and Tablets- 1400 to 1000 px */
+
+/* @media (max-width: 1400px) {
+} */
+
+@media (max-width: 1024px) {
+  .header {
+    position: relative;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .socials {
+    display: none;
+  }
+
+  .menu-open {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--black);
+  }
+
+  .mobile-menu,
+  .mobile-nav,
+  .mobile-socials,
+  .menu-close {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    background-color: var(--black-5);
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 4rem 8rem 4rem 8rem;
+    align-items: flex-end;
+    gap: 6rem;
+    box-shadow: 1px -5px 15px rgba(36, 37, 44, 0.2);
+  }
+
+  .menu-close {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--black);
+  }
+
+  .social {
+    width: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+}
