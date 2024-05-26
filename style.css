@@ -2,12 +2,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
   --primary-color: #4362ec;
   --secondary-color: #0f4397;
-  --brand-gradient: linear-gradient(#4362ec, #0f4397);
+  --brand-gradient: linear-gradient(to right, #4362ec, #0f4397);
 
   --black: #24252c;
   --black-75: #5b5c60;
@@ -25,7 +26,6 @@ html {
   line-height: 1;
   font-weight: 400;
   color: var(--black-75);
-  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -92,6 +92,99 @@ body {
 .mobile-menu {
   display: none;
 }
+
+/* -------- HERO SECTION ---------*/
+
+.hero {
+  max-width: 87.5rem;
+  margin: 16rem auto;
+  gap: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.name {
+  font-size: 3.1rem;
+  font-weight: 300;
+
+  background: var(--brand-gradient);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.profile {
+  font-size: 5.6rem;
+  font-weight: 700;
+  line-height: 7.5rem;
+  color: var(--black);
+}
+
+.hero-info-cta {
+  max-width: 54rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8rem;
+}
+
+.hero-info {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1.5rem 3rem;
+  border-radius: 10rem;
+  color: var(--white);
+  background: none;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: var(--brand-gradient);
+}
+.btn-secondary {
+  color: var(--black);
+  background: var(--white);
+  outline: 2px solid var(--black);
+  outline-offset: -2px;
+}
+
 /* ---------- Responsive Design ---------- */
 
 /* 1. Laptop and Tablets- 1400 to 1000 px */
@@ -99,6 +192,7 @@ body {
 /* @media (max-width: 1400px) {
 } */
 
+/* 2. Laptop and Tablets- 1024 to 600 px */
 @media (max-width: 1024px) {
   .header {
     position: relative;
@@ -124,7 +218,7 @@ body {
   .mobile-nav,
   .mobile-socials,
   .menu-close {
-    display: flex;
+    display: none;
     flex-direction: column;
   }
 
