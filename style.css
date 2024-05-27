@@ -96,9 +96,10 @@ body {
 /* -------- HERO SECTION ---------*/
 
 .hero {
-  max-width: 87.5rem;
+  max-width: 90rem;
   margin: 16rem auto;
-  gap: 2rem;
+  padding: 0 2rem;
+  gap: 3rem;
 
   display: flex;
   flex-direction: column;
@@ -126,7 +127,7 @@ body {
 }
 
 .profile {
-  font-size: 5.6rem;
+  font-size: 6.5rem;
   font-weight: 700;
   line-height: 7.5rem;
   color: var(--black);
@@ -245,7 +246,37 @@ body {
   .social {
     width: 2.5rem;
   }
+
+  .profile {
+    font-size: 5.5rem;
+    line-height: 6.5rem;
+  }
 }
 
 @media (max-width: 600px) {
+  .header {
+    padding: 1.5rem 3rem;
+  }
+
+  .hero {
+    gap: 4rem;
+  }
+
+  .profile {
+    font-size: 3.8rem;
+    line-height: 4.5rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .hero-info-cta {
+    gap: 6rem;
+  }
+
+  .hero-info {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
 }
