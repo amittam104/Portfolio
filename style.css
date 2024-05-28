@@ -193,6 +193,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 6rem;
+  padding: 0 4rem;
 }
 
 .skills-header {
@@ -200,8 +202,45 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
+.skills-tag {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.25rem;
+  color: var(--primary-color);
+}
+.skills-header-text {
+  font-size: 3.1rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.skills-list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.skill-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.skill-logo {
+  width: 6rem;
+}
 /* ---------- Responsive Design ---------- */
 
 /* 1. Laptop and Tablets- 1400 to 1000 px */
