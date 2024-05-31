@@ -123,6 +123,7 @@ body {
   font-weight: 300;
 
   background: var(--brand-gradient);
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
@@ -476,12 +477,15 @@ body {
 }
 
 @media (max-width: 600px) {
+  /* Header/Nav */
   .header {
     padding: 1.5rem 3rem;
   }
 
+  /* Hero */
   .hero {
     gap: 4rem;
+    margin: 12rem 0 20rem 0;
   }
 
   .profile {
@@ -502,6 +506,7 @@ body {
     line-height: 2rem;
   }
 
+  /* Skills */
   .skills {
     padding: 0 2rem;
     text-align: center;
@@ -521,5 +526,40 @@ body {
 
   .skill-name {
     font-size: 1.25rem;
+  }
+
+  /* Projects */
+  .projects {
+    padding: 0 2rem;
+  }
+
+  .projects-header {
+    margin-bottom: 6rem;
+  }
+
+  .projects-header-text {
+    font-size: 2.5rem;
+  }
+
+  .projects-tag {
+    font-size: 1.25rem;
+  }
+
+  .project-header-text {
+    font-size: 2rem;
+  }
+
+  .project-description-text {
+    font-size: 1.25rem;
+    width: 100%;
+  }
+
+  .project-features-header,
+  .project-stack-header {
+    font-size: 1.5rem;
+  }
+
+  .project-stack-list {
+    flex-wrap: wrap;
   }
 }
