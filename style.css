@@ -275,7 +275,7 @@ body {
   margin-bottom: 8rem;
 }
 
-.projects-tag {
+.tag {
   font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 0.25rem;
@@ -412,6 +412,70 @@ body {
   border-radius: 0.8rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+/* -------- ABOUT ME SECTION ---------*/
+.about-me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  padding: 0 4rem;
+  margin-bottom: 20rem;
+}
+
+.about-me--image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-me--image img {
+  max-width: 25rem;
+}
+
+.about-me--info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-me--header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.about-me--header-text {
+  font-size: 3.1rem;
+  font-weight: 300;
+  color: var(--black);
+}
+
+.about-me-description {
+  width: 80%;
+  margin-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.description {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.btn-download-CV {
+  padding: 0.8rem 1.6rem;
+  max-width: 16rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.btn-download-CV svg {
+  width: 2rem;
+}
 /* ---------- Responsive Design ---------- */
 
 /* 1. Laptop - 1200 px */
@@ -496,6 +560,23 @@ body {
   .skills-list {
     justify-content: center;
   }
+
+  /* About Me */
+  .about-me {
+    flex-direction: column;
+  }
+
+  .about-me--info {
+    width: 50%;
+  }
+
+  .about-me--image {
+    justify-content: flex-start;
+  }
+
+  .about-me-description {
+    width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -563,7 +644,7 @@ body {
     font-size: 2.5rem;
   }
 
-  .projects-tag {
+  .tag {
     font-size: 1.25rem;
   }
 
@@ -583,5 +664,50 @@ body {
 
   .project-stack-list {
     flex-wrap: wrap;
+  }
+
+  /* About Me */
+
+  .about-me {
+    gap: 6rem;
+    padding: 0 2rem;
+    margin-bottom: 20rem;
+  }
+
+  .about-me--image {
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-me--image img {
+    max-width: 20rem;
+  }
+
+  .about-me--info {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .about-me--header {
+    margin-bottom: 3rem;
+  }
+
+  .about-me-description {
+    width: 80%;
+    margin-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-me--header-text {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1.25rem;
+    line-height: 1.5;
   }
 }
