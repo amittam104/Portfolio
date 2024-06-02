@@ -476,6 +476,76 @@ body {
 .btn-download-CV svg {
   width: 2rem;
 }
+
+/* CTA SECTION */
+
+.CTA {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 4rem;
+  margin-bottom: 25rem;
+}
+
+.CTA--header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 8rem;
+}
+.CTA--header-text {
+  font-size: 3.1rem;
+  font-weight: 300;
+  color: var(--black);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 75%;
+}
+
+.form-element {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-label {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.form input,
+.form textarea {
+  background-color: var(--black-10);
+  color: var(--black-75);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 2.5rem;
+  height: 4rem;
+  outline: none;
+}
+
+.form textarea {
+  height: 15rem;
+}
+
+.btn-CTA {
+  align-self: center;
+  max-width: 28%;
+  font-size: 1.25rem;
+  padding: 1.25rem 2.5rem;
+}
+
+.btn-CTA svg {
+  width: 2rem;
+}
+
 /* ---------- Responsive Design ---------- */
 
 /* 1. Laptop - 1200 px */
