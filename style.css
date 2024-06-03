@@ -537,7 +537,7 @@ body {
 
 .btn-CTA {
   align-self: center;
-  max-width: 28%;
+  max-width: 60%;
   font-size: 1.25rem;
   padding: 1.25rem 2.5rem;
 }
@@ -646,6 +646,11 @@ body {
 
   .about-me-description {
     width: 100%;
+  }
+
+  /* CTA */
+  .form {
+    width: 80%;
   }
 }
 
@@ -773,11 +778,25 @@ body {
   }
 
   .about-me--header-text {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .description {
     font-size: 1.25rem;
     line-height: 1.5;
+  }
+
+  /* CTA */
+
+  .CTA {
+    padding: 0 2rem;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .CTA--header-text {
+    font-size: 2.5rem;
   }
 }
