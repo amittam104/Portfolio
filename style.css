@@ -269,6 +269,7 @@ body {
 .projects {
   margin-bottom: var(--section-margin);
   padding: 0 4rem;
+  scroll-margin-top: 10rem;
 }
 
 .projects-header {
@@ -426,6 +427,7 @@ body {
   gap: 6rem;
   padding: 0 4rem;
   margin-bottom: var(--section-margin);
+  scroll-margin-top: 15rem;
 }
 
 .about-me--image {
@@ -492,6 +494,7 @@ body {
   margin: 0 auto;
   padding: 0 4rem;
   margin-bottom: var(--section-margin);
+  scroll-margin-top: 6rem;
 }
 
 .CTA--header {
@@ -719,7 +722,7 @@ body {
   /* Hero */
   .hero {
     gap: 4rem;
-    margin: 12rem 0 20rem 0;
+    margin: 12rem 0 15rem 0;
   }
 
   .profile {
@@ -742,8 +745,9 @@ body {
 
   /* Skills */
   .skills {
-    padding: 0 2rem;
+    padding: 0 2rem 8rem 2rem;
     text-align: center;
+    margin-bottom: 8rem;
   }
 
   .skills-tag {
@@ -802,7 +806,7 @@ body {
   .about-me {
     gap: 6rem;
     padding: 0 2rem;
-    margin-bottom: 20rem;
+    margin-bottom: 15rem;
   }
 
   .about-me--image {
@@ -812,7 +816,7 @@ body {
   }
 
   .about-me--image img {
-    max-width: 20rem;
+    max-width: 15rem;
   }
 
   .about-me--info {
@@ -850,6 +854,10 @@ body {
 
   .form {
     width: 100%;
+  }
+
+  .CTA--header {
+    margin-bottom: 5rem;
   }
 
   .CTA--header-text {
