@@ -19,6 +19,9 @@
   --white: #ffffff;
 
   --error: #ed4261;
+
+  /* Spacing */
+  --section-margin: 15rem;
 }
 
 html {
@@ -98,7 +101,7 @@ body {
 
 .hero {
   max-width: 90rem;
-  margin: 20rem auto;
+  margin: var(--section-margin) auto;
   padding: 0 2rem;
   gap: 3rem;
 
@@ -209,8 +212,10 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8rem;
-  padding: 6rem 4rem;
-  margin-bottom: 20rem;
+  padding: 10rem 4rem;
+  margin-bottom: 10rem;
+  /* margin-bottom: var(--section-margin); */
+  border-bottom: 1.5px solid var(--black-10);
 }
 
 .skills-header {
@@ -262,7 +267,7 @@ body {
 /* -------- PROJECTS SECTION ---------*/
 
 .projects {
-  margin-bottom: 20rem;
+  margin-bottom: var(--section-margin);
   padding: 0 4rem;
 }
 
@@ -321,7 +326,7 @@ body {
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 12rem;
+  gap: 10rem;
 }
 
 .project-features {
@@ -420,7 +425,7 @@ body {
   justify-content: center;
   gap: 6rem;
   padding: 0 4rem;
-  margin-bottom: 20rem;
+  margin-bottom: var(--section-margin);
 }
 
 .about-me--image {
@@ -486,7 +491,7 @@ body {
   max-width: 90rem;
   margin: 0 auto;
   padding: 0 4rem;
-  margin-bottom: 25rem;
+  margin-bottom: var(--section-margin);
 }
 
 .CTA--header {
@@ -546,7 +551,51 @@ body {
   width: 2rem;
 }
 
-/* ---------- Responsive Design ---------- */
+/* FOOTER */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4rem;
+  padding: 2rem 4rem;
+  border-top: 1.5px solid var(--black-10);
+}
+
+.logo-copyright {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  padding-right: 8rem;
+}
+
+.footer-nav-link {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--black);
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+}
+
+.footer-nav-link:hover {
+  transform: scale(1.05);
+  color: var(--primary-color);
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+/* -------------------------- Responsive Design -------------------------- */
 
 /* 1. Laptop - 1200 px */
 
@@ -565,6 +614,13 @@ body {
 
   .project-img-box {
     width: 100%;
+  }
+
+  /* Footer */
+  .logo-copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -798,5 +854,26 @@ body {
 
   .CTA--header-text {
     font-size: 2.5rem;
+  }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    padding: 2rem 2rem;
+  }
+
+  .footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    padding-right: 0;
+  }
+
+  .logo-copyright {
+    align-items: center;
   }
 }
