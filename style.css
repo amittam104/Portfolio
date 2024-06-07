@@ -35,12 +35,23 @@ body {
   background-color: var(--white);
 }
 
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.section {
+  transition: transform 1s, opacity 1s;
+}
+
 /* -------- Header - Navbar - Socials ---------*/
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2rem 4rem;
+  width: 100vw;
+  transition: all 0.3s ease-in-out;
 }
 
 .logo-icon {
@@ -101,7 +112,10 @@ body {
 
 .hero {
   max-width: 90rem;
-  margin: var(--section-margin) auto;
+  margin-bottom: var(--section-margin);
+  margin-top: var(--section-margin);
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 2rem;
   gap: 3rem;
 
@@ -629,9 +643,9 @@ body {
 
 /* 2. Laptop and Tablets- 1024 to 600 px */
 @media (max-width: 1024px) {
-  .header {
+  /* .header {
     position: relative;
-  }
+  } */
 
   .nav {
     display: none;
@@ -717,12 +731,13 @@ body {
   /* Header/Nav */
   .header {
     padding: 1.5rem 3rem;
+    margin-bottom: 12rem;
   }
 
   /* Hero */
   .hero {
     gap: 4rem;
-    margin: 12rem 0 15rem 0;
+    margin: 0 0 15rem 0;
   }
 
   .profile {

@@ -5,6 +5,9 @@ import "./style.css";
 const sectionProject = document.querySelector(".projects");
 const sectionAboutMe = document.querySelector(".about-me");
 const sectionContact = document.querySelector(".CTA");
+const sectionHero = document.querySelector(".hero");
+const sectionSkills = document.querySelector(".skills");
+const sectionHeader = document.querySelector(".header");
 
 const linkProjects = document.querySelector(".nav-link--projects");
 const linkAboutMe = document.querySelector(".nav-link--aboutMe");
@@ -20,7 +23,7 @@ const btnContactForm = document.querySelector(".btn-CTA");
 const btnMenuOpen = document.querySelector(".menu-open");
 const btnMenuClose = document.querySelector(".menu-close");
 
-// Smooth Scrolling
+// ----------- Smooth Scrolling -----------
 function scrollToProjects() {
   sectionProject.scrollIntoView({ behavior: "smooth" });
 }
@@ -37,3 +40,26 @@ linkAboutMe.addEventListener("click", function () {
 
 linkContact.addEventListener("click", scrollToContact);
 btnContact.addEventListener("click", scrollToContact);
+
+// --------------------- Sections loading on scroll --------------------------------
+const sections = document.querySelectorAll(".section");
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.remove("section--hidden");
+
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+
+sections.forEach((section) => {
+  // section.classList.add('section--hidden');
+  sectionObserver.observe(section);
+});
