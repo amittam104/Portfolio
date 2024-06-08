@@ -1,5 +1,12 @@
 ("use strict");
 import "./style.css";
+import { Client, Storage } from "appwrite";
+
+const client = new Client();
+
+client
+  .setEndpoint(import.meta.env.VITE_APPWRITE_API_URL)
+  .setProject(import.meta.env.VITE_APPWRITE_PROJECT_ID);
 
 // variables Declaration
 const sectionProject = document.querySelector(".projects");
@@ -63,3 +70,17 @@ sections.forEach((section) => {
   // section.classList.add('section--hidden');
   sectionObserver.observe(section);
 });
+
+const storage = new Storage(client);
+// CV Download
+const downloadCV = function () {
+  const result = storage.getFileDownload(
+    import.meta.env.VITE_APPWRITE_BUCKET_ID,
+    import.meta.env.VITE_APPWRITE_FILE_ID
+  );
+
+  const file = result.href;
+  btnDownloadCV.href = file;
+};
+
+btnDownloadCV.addEventListener("click", downloadCV);

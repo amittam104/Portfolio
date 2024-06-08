@@ -492,6 +492,7 @@ body {
   max-width: 16rem;
   font-size: 1.25rem;
   font-weight: 500;
+  text-decoration: none;
 }
 
 .btn-download-CV svg {
