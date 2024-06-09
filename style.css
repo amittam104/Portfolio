@@ -547,7 +547,6 @@ body {
 .form textarea {
   background-color: var(--black-10);
   color: var(--black-75);
-  border: none;
   border-radius: 0.5rem;
   padding: 2.5rem;
   height: 4rem;
@@ -556,6 +555,24 @@ body {
 
 .form textarea {
   height: 15rem;
+}
+
+.form-error-name,
+.form-error-email,
+.form-error-message {
+  font-size: 14px;
+  color: var(--error);
+  display: none;
+}
+
+.input-error {
+  border: none;
+}
+
+.input-error--name,
+.input-error--email,
+.input-error--message {
+  border: 2px solid var(--error);
 }
 
 .btn-CTA {

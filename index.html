@@ -546,7 +546,7 @@
               a Service (BaaS) and built numerous front-end applications.
             </p>
           </div>
-          <a class="btn btn-primary btn-download-CV" donwload>
+          <!-- <a class="btn btn-primary btn-download-CV" donwload>
             Download CV
             <span
               ><svg
@@ -562,7 +562,7 @@
                 ></path>
               </svg>
             </span>
-          </a>
+          </a> -->
         </div>
       </section>
       <section class="section section--hidden CTA">
@@ -573,7 +573,14 @@
         <form action="submit" class="form">
           <div class="form-element form-Name">
             <label for="name" class="form-label label-name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Name" />
+            <input
+              type="text"
+              id="name"
+              class="input-error"
+              name="name"
+              placeholder="Name"
+            />
+            <p class="form-error form-error-name">Please enter your name.</p>
           </div>
           <div class="form-element form-Email">
             <label for="email" class="form-label label-email">Your Email</label>
@@ -581,8 +588,12 @@
               type="email"
               name="email"
               id="email"
+              class="input-error"
               placeholder="Email Id"
             />
+            <p class="form-error form-error-email">
+              Please enter your valid Email Id.
+            </p>
           </div>
           <div class="form-element form-Message">
             <label for="message" class="form-label label-message"
@@ -592,8 +603,10 @@
               type="text"
               name="message"
               id="message"
+              class="input-error"
               placeholder="Message"
             ></textarea>
+            <p class="form-error form-error-message">Please enter a message.</p>
           </div>
 
           <button class="btn btn-CTA btn-secondary">
@@ -621,7 +634,7 @@
         <img class="logo-icon" src="/logo.svg" alt="logo" />
         <p class="copyright-text">© 2024 Amit Tambulkar. All rights reserved</p>
       </div>
-      <nav class="footer-nav">
+      <!-- <nav class="footer-nav">
         <a class="footer-nav-link footer-nav-link--home" href="#">Home</a>
         <a class="footer-nav-link footer-nav-link--projects" href="#"
           >Projects</a
@@ -629,7 +642,7 @@
         <a class="footer-nav-link footer-nav-link--aboutMe" href="#"
           >About Me</a
         >
-      </nav>
+      </nav> -->
       <div class="footer-social-links">
         <a
           target="_blank"

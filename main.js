@@ -12,20 +12,22 @@ client
 const sectionProject = document.querySelector(".projects");
 const sectionAboutMe = document.querySelector(".about-me");
 const sectionContact = document.querySelector(".CTA");
-const sectionHero = document.querySelector(".hero");
-const sectionSkills = document.querySelector(".skills");
-const sectionHeader = document.querySelector(".header");
 
 const linkProjects = document.querySelector(".nav-link--projects");
 const linkAboutMe = document.querySelector(".nav-link--aboutMe");
 const linkContact = document.querySelector(".nav-link--contact");
-const linkHomeFooter = document.querySelector(".footer-nav-link--home");
-const linkProjectsFooter = document.querySelector(".footer-nav-link--projects");
-const linkAboutMeFooter = document.querySelector(".footer-nav-link--aboutMe");
+
+const inputFormName = document.getElementById("name");
+const inputFormEmail = document.getElementById("email");
+const inputFormMessage = document.getElementById("message");
+
+const errorMsgFormName = document.querySelector(".form-error-name");
+const errorMsgFormEmail = document.querySelector(".form-error-email");
+const errorMsgFormMessage = document.querySelector(".form-error-message");
 
 const btnProjects = document.querySelector(".btn-projects");
 const btnContact = document.querySelector(".btn-connect");
-const btnDownloadCV = document.querySelector(".btn-download-CV");
+// const btnDownloadCV = document.querySelector(".btn-download-CV");
 const btnContactForm = document.querySelector(".btn-CTA");
 const btnMenuOpen = document.querySelector(".menu-open");
 const btnMenuClose = document.querySelector(".menu-close");
@@ -71,16 +73,55 @@ sections.forEach((section) => {
   sectionObserver.observe(section);
 });
 
-const storage = new Storage(client);
 // CV Download
-const downloadCV = function () {
-  const result = storage.getFileDownload(
-    import.meta.env.VITE_APPWRITE_BUCKET_ID,
-    import.meta.env.VITE_APPWRITE_FILE_ID
-  );
+// const storage = new Storage(client);
+// const downloadCV = function () {
+//   const result = storage.getFileDownload(
+//     import.meta.env.VITE_APPWRITE_BUCKET_ID,
+//     import.meta.env.VITE_APPWRITE_FILE_ID
+//   );
 
-  const file = result.href;
-  btnDownloadCV.href = file;
+//   const file = result.href;
+//   btnDownloadCV.href = file;
+// };
+
+// --------------------- Form Validation --------------------------------
+const validateEmail = (email) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
 };
 
-btnDownloadCV.addEventListener("click", downloadCV);
+function formValidation(e) {
+  e.preventDefault();
+  if (!inputFormName.value) {
+    inputFormName.classList.add("input-error--name");
+    errorMsgFormName.style.display = "block";
+  } else {
+    inputFormName.classList.remove("input-error--name");
+    errorMsgFormName.style.display = "none";
+  }
+
+  if (!validateEmail(inputFormEmail.value)) {
+    inputFormEmail.classList.add("input-error--email");
+    errorMsgFormEmail.style.display = "block";
+  } else {
+    inputFormEmail.classList.remove("input-error--email");
+    errorMsgFormEmail.style.display = "none";
+  }
+
+  if (!inputFormMessage.value) {
+    inputFormMessage.classList.add("input-error--message");
+    errorMsgFormMessage.style.display = "block";
+  } else {
+    inputFormMessage.classList.remove("input-error--message");
+    errorMsgFormMessage.style.display = "none";
+  }
+
+  if (!inputFormName.value || !inputFormEmail.value || !inputFormMessage.value)
+    return;
+}
+
+btnContactForm.addEventListener("click", formValidation);
