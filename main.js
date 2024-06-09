@@ -14,10 +14,14 @@ const databases = new Databases(client);
 const sectionProject = document.querySelector(".projects");
 const sectionAboutMe = document.querySelector(".about-me");
 const sectionContact = document.querySelector(".CTA");
+const menuMobile = document.querySelector(".mobile-menu");
 
 const linkProjects = document.querySelector(".nav-link--projects");
 const linkAboutMe = document.querySelector(".nav-link--aboutMe");
 const linkContact = document.querySelector(".nav-link--contact");
+const linkMobileProjects = document.querySelector(".nav-link--mobile-projects");
+const linkMobileAboutMe = document.querySelector(".nav-link--mobile-aboutme");
+const linkMobileContact = document.querySelector(".nav-link--mobile-contact");
 
 const ctaForm = document.querySelector(".form");
 const inputFormName = document.getElementById("name");
@@ -43,15 +47,29 @@ function scrollToContact() {
   sectionContact.scrollIntoView({ behavior: "smooth" });
 }
 
+function scrollToAboutMe() {
+  sectionAboutMe.scrollIntoView({ behavior: "smooth" });
+}
+
 linkProjects.addEventListener("click", scrollToProjects);
 btnProjects.addEventListener("click", scrollToProjects);
+linkMobileProjects.addEventListener("click", () => {
+  scrollToProjects();
+  menuMobile.style.display = "none";
+});
 
-linkAboutMe.addEventListener("click", function () {
-  sectionAboutMe.scrollIntoView({ behavior: "smooth" });
+linkAboutMe.addEventListener("click", scrollToAboutMe);
+linkMobileAboutMe.addEventListener("click", () => {
+  scrollToAboutMe();
+  menuMobile.style.display = "none";
 });
 
 linkContact.addEventListener("click", scrollToContact);
 btnContact.addEventListener("click", scrollToContact);
+linkMobileContact.addEventListener("click", () => {
+  scrollToContact();
+  menuMobile.style.display = "none";
+});
 
 // --------------------- Sections loading on scroll --------------------------------
 const sections = document.querySelectorAll(".section");
@@ -68,7 +86,7 @@ const revealSection = function (entries, observer) {
 
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
-  threshold: 0.15,
+  threshold: 0.1,
 });
 
 sections.forEach((section) => {
@@ -146,7 +164,7 @@ function formValidationSubmission(e) {
         throw new Error("Something went wrong. Please try again!");
 
       const html = `
-      <p class='form-success-message'>Thank you for connecting. I will reach out to you soon meanwhile connect with me on 
+      <p class='form-success-message'>Thank you for connecting. I will reach out to you soon. In the meantime, please feel free to connect with me on 
         <a class='form-success-LinkedIn' target="_blank"
             aria-label="LinkedIn"
             href="https://www.linkedin.com/in/amittambulkar/">
@@ -175,3 +193,12 @@ function formValidationSubmission(e) {
 }
 
 btnContactForm.addEventListener("click", formValidationSubmission);
+
+// --------------------- Form Validation --------------------------------
+btnMenuOpen.addEventListener("click", function () {
+  menuMobile.style.display = "flex";
+});
+
+btnMenuClose.addEventListener("click", function () {
+  menuMobile.style.display = "none";
+});
