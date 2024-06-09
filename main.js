@@ -19,6 +19,7 @@ const linkProjects = document.querySelector(".nav-link--projects");
 const linkAboutMe = document.querySelector(".nav-link--aboutMe");
 const linkContact = document.querySelector(".nav-link--contact");
 
+const ctaForm = document.querySelector(".form");
 const inputFormName = document.getElementById("name");
 const inputFormEmail = document.getElementById("email");
 const inputFormMessage = document.getElementById("message");
@@ -129,16 +130,45 @@ function formValidationSubmission(e) {
     return;
 
   const submitForm = async function () {
-    const response = await databases.createDocument(
-      import.meta.env.VITE_APPWRITE_DATABASE_ID,
-      import.meta.env.VITE_APPWRITE_COLLECTION_ID,
-      ID.unique(),
-      {
-        name: inputFormName.value,
-        email: inputFormEmail.value,
-        message: inputFormMessage.value,
+    try {
+      const response = await databases.createDocument(
+        import.meta.env.VITE_APPWRITE_DATABASE_ID,
+        import.meta.env.VITE_APPWRITE_COLLECTION_ID,
+        ID.unique(),
+        {
+          name: inputFormName.value,
+          email: inputFormEmail.value,
+          message: inputFormMessage.value,
+        }
+      );
+
+      if (!response.$id)
+        throw new Error("Something went wrong. Please try again!");
+
+      const html = `
+      <p class='form-success-message'>Thank you for connecting. I will reach out to you soon meanwhile connect with me on 
+        <a class='form-success-LinkedIn' target="_blank"
+            aria-label="LinkedIn"
+            href="https://www.linkedin.com/in/amittambulkar/">
+            LinkedIn
+        </a>
+      </p>
+      `;
+
+      if (response.$id) {
+        ctaForm.insertAdjacentHTML("beforeend", html);
       }
-    );
+    } catch (error) {
+      const html = `
+      <p class='form-success-message'>Something went wrong. Please try again or connect with on <a class='form-success-LinkedIn'  target="_blank"
+            aria-label="LinkedIn"
+            href="https://www.linkedin.com/in/amittambulkar/">
+            LinkedIn
+        </a>
+      </p>
+      `;
+      ctaForm.insertAdjacentHTML("beforeend", errorHtml);
+    }
   };
 
   submitForm();
