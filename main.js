@@ -1,12 +1,14 @@
 ("use strict");
 import "./style.css";
-import { Client, Storage } from "appwrite";
+import { Client, Databases, ID } from "appwrite";
 
 const client = new Client();
 
 client
   .setEndpoint(import.meta.env.VITE_APPWRITE_API_URL)
   .setProject(import.meta.env.VITE_APPWRITE_PROJECT_ID);
+
+const databases = new Databases(client);
 
 // variables Declaration
 const sectionProject = document.querySelector(".projects");
@@ -125,6 +127,21 @@ function formValidationSubmission(e) {
 
   if (!inputFormName.value || !inputFormEmail.value || !inputFormMessage.value)
     return;
+
+  const submitForm = async function () {
+    const response = await databases.createDocument(
+      import.meta.env.VITE_APPWRITE_DATABASE_ID,
+      import.meta.env.VITE_APPWRITE_COLLECTION_ID,
+      ID.unique(),
+      {
+        name: inputFormName.value,
+        email: inputFormEmail.value,
+        message: inputFormMessage.value,
+      }
+    );
+  };
+
+  submitForm();
 }
 
 btnContactForm.addEventListener("click", formValidationSubmission);
