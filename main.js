@@ -94,13 +94,14 @@ const validateEmail = (email) => {
     );
 };
 
-function formValidation(e) {
+function formValidationSubmission(e) {
   e.preventDefault();
   if (!inputFormName.value) {
     inputFormName.classList.add("input-error--name");
     errorMsgFormName.style.display = "block";
   } else {
     inputFormName.classList.remove("input-error--name");
+    inputFormName.classList.add("input-sucess--name");
     errorMsgFormName.style.display = "none";
   }
 
@@ -109,6 +110,7 @@ function formValidation(e) {
     errorMsgFormEmail.style.display = "block";
   } else {
     inputFormEmail.classList.remove("input-error--email");
+    inputFormEmail.classList.add("input-sucess--email");
     errorMsgFormEmail.style.display = "none";
   }
 
@@ -117,6 +119,7 @@ function formValidation(e) {
     errorMsgFormMessage.style.display = "block";
   } else {
     inputFormMessage.classList.remove("input-error--message");
+    inputFormMessage.classList.add("input-sucess--message");
     errorMsgFormMessage.style.display = "none";
   }
 
@@ -124,4 +127,4 @@ function formValidation(e) {
     return;
 }
 
-btnContactForm.addEventListener("click", formValidation);
+btnContactForm.addEventListener("click", formValidationSubmission);

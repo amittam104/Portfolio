@@ -476,7 +476,7 @@ body {
 
 .about-me-description {
   width: 80%;
-  margin-bottom: 6rem;
+  /* margin-bottom: 6rem; */
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -573,6 +573,12 @@ body {
 .input-error--email,
 .input-error--message {
   border: 2px solid var(--error);
+}
+
+.input-sucess--name,
+.input-sucess--email,
+.input-sucess--message {
+  border: 2px solid var(--primary-color);
 }
 
 .btn-CTA {
