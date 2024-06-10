@@ -177,7 +177,7 @@ function formValidationSubmission(e) {
         ctaForm.insertAdjacentHTML("beforeend", html);
       }
     } catch (error) {
-      const html = `
+      const errorHtml = `
       <p class='form-success-message'>Something went wrong. Please try again or connect with on <a class='form-success-LinkedIn'  target="_blank"
             aria-label="LinkedIn"
             href="https://www.linkedin.com/in/amittambulkar/">
