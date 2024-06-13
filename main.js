@@ -178,7 +178,7 @@ function formValidationSubmission(e) {
       }
     } catch (error) {
       const errorHtml = `
-      <p class='form-success-message'>Something went wrong. Please try again or connect with on <a class='form-success-LinkedIn'  target="_blank"
+      <p class='form-success-message'>Something went wrong. Please try again or connect with me on <a class='form-success-LinkedIn'  target="_blank"
             aria-label="LinkedIn"
             href="https://www.linkedin.com/in/amittambulkar/">
             LinkedIn
