@@ -253,11 +253,11 @@ body {
 }
 
 .skills-list {
-  width: 100%;
+  width: 90%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 6rem;
+  justify-content: center;
+  gap: 12rem;
   flex-wrap: wrap;
 }
 
@@ -825,6 +825,10 @@ body {
 
   .skill-name {
     font-size: 1.25rem;
+  }
+
+  .skills-list {
+    gap: 5rem;
   }
 
   /* Projects */
